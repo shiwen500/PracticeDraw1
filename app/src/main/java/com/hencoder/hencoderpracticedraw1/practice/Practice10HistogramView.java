@@ -74,6 +74,8 @@ public class Practice10HistogramView extends View {
         // 绘制x坐标文字,柱子
         cPaint.setColor(Color.GREEN);
         paint.setTextSize(30);
+        paint.setStyle(Paint.Style.FILL); // 如果是stroke，字体会是空心的
+        paint.setAntiAlias(true);
         float horizontalMargin = 10; // 柱子之间的距离
         float columnWidth = 100; // 柱子的宽度
         cPaint.setStrokeWidth(columnWidth);
@@ -88,6 +90,7 @@ public class Practice10HistogramView extends View {
                     baseY + 40,
                     paint
             );
+            Log.d("Seven", "draw: " + item.label);
             canvas.drawLine(
                     x, baseY, x, baseY - item.value, cPaint
             );
